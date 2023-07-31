@@ -1,34 +1,57 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Alert } from 'react-native';
 import Constants from 'expo-constants';
+
+import SignIn from './SignIn'
+import { Link } from 'react-router-native';
+
+import {
+  ScrollView
+} from 'react-native';
 
 const styles = StyleSheet.create({
   flexContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingTop: Constants.statusBarHeight,
+      display: 'flex',
+      paddingBottom: 10,
+      flexDirection: 'row',
   },
   flexItemA: {
-    flexGrow: 1,
+    flex: 2,
     backgroundColor: 'black',
+
+
   },
   text: {
       color: 'white',
       fontSize: 24,
       fontWeight: '700',
+  },
+  bar_text: {
+    paddingLeft: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginTop: 10,
   }
+
 });
 
 
-const AppBarTab = ({text}) => {
+const AppBarTab = (props) => {
   return (
     <View style={styles.flexContainer}>
-      <View style={styles.flexItemA}>
-        <Pressable onPress={null}>
-            <Text style={styles.text}>{text}</Text>
-        </Pressable>
-      </View>
+        <ScrollView horizontal>
+          <Link to='/'>
+            <Text style={styles.bar_text} >
+              {props.text1}
+            </Text>
+          </Link>
+          <Link to='/signin' >
+            <Text style={styles.bar_text} >
+              {props.text2}
+            </Text>
+          </Link>
 
-
+       </ScrollView>
     </View>
   );
 };

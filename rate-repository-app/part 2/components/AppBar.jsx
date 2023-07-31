@@ -6,10 +6,10 @@ import theme from './theme'
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
+    marginTop: Constants.statusBarHeight,
     backgroundColor: theme.colors.appBarBackground,
     paddingBottom: 15,
-    // color: 'white',
+
   },
   // ...
 });
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-    <AppBarTab text={"Repositories"} />
+    <AppBarTab text1={"Repositories"} text2={"Sign In"} />
     </View>
   );
 };
