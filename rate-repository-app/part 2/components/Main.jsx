@@ -11,11 +11,10 @@ import SignIn from './SignIn'
 
 const styles = StyleSheet.create({
   container: {
-
     marginTop: Constants.statusBarHeight,
-        flexGrow: 1,
-        flexShrink: 1,
-        backgroundColor: theme.colors.appBackGround,
+    flexGrow: 1,
+    flexShrink: 1,
+    backgroundColor: theme.colors.appBackGround,
   },
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "rate-repository-app",
-  "version": "0.10.6-7",
+  "version": "0.10.8",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -13,6 +13,7 @@
     "@expo/webpack-config": "^18.0.1",
     "expo": "^48.0.20",
     "expo-status-bar": "~1.4.0",
+    "formik": "^2.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",

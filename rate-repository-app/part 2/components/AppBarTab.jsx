@@ -17,8 +17,6 @@ const styles = StyleSheet.create({
   flexItemA: {
     flex: 2,
     backgroundColor: 'black',
-
-
   },
   text: {
       color: 'white',
