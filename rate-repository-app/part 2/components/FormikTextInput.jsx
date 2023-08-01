@@ -7,13 +7,15 @@ import Text from './Text';
 const styles = StyleSheet.create({
   errorText: {
     marginTop: 5,
+    color: 'red'
   },
   st: {
   paddingTop:20,
   paddingBottom:10,
   borderColor: 'gray',
   borderWidth: 1,
-  opacity:0.7
+  opacity:0.7,
+  marginBottom:20
   }
 });
 
