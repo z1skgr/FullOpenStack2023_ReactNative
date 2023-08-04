@@ -1,6 +1,6 @@
 {
   "name": "rate-repository-app",
-  "version": "0.10.10",
+  "version": "0.10.11",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
