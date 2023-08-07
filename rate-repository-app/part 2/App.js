@@ -5,8 +5,11 @@ import Main from './src/components/Main';
 
 import createApolloClient from './src/utils/apolloClient';
 
-const apolloClient = createApolloClient();
 import Constants from 'expo-constants';
+
+
+const apolloClient = createApolloClient();
+
 
 const App = () => {
   console.log(Constants.manifest);
@@ -14,7 +17,9 @@ const App = () => {
     <>
       <NativeRouter>
         <ApolloProvider client={apolloClient}>
+
         <Main />
+
         </ApolloProvider>
       </NativeRouter>
       <StatusBar style="auto" />
