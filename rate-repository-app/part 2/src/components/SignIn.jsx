@@ -5,6 +5,9 @@ import * as yup from 'yup';
 
 import useSignIn from "../hooks/useSignIn";
 
+import { useNavigate } from "react-router-native";
+import { useApolloClient } from "@apollo/client";
+
 const validationSchema = yup.object().shape({
   username: yup.string()
     .required('username is required'),
@@ -19,6 +22,7 @@ const initialValues = {
 
 const SignIn = () => {
   const [signIn] = useSignIn();
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
       const { username, password } = values;
@@ -27,6 +31,7 @@ const SignIn = () => {
       //console.log(password)
       try {
         const  data  = await signIn({ username, password });
+        navigate("/");
         console.log(data);
       } catch (e) {
         console.log(e);
