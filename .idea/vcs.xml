@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/rate-repository-app/part 2/rate-repository-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rate-repository-app/part 3/FullOpenStack2023_ReactNative" vcs="Git" />
   </component>
 </project>
