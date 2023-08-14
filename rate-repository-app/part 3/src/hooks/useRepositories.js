@@ -5,6 +5,7 @@ import Text from "../components/Text";
 
 import { GET_REPOSITORIES } from "../graphql/queries";
 
+
 const useRepositories = () => {
   const [repositories, setRepositories] = useState();
 
@@ -17,5 +18,7 @@ const useRepositories = () => {
 
   return { repositories, loading, error  };
 };
+
+
 
 export default useRepositories;

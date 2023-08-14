@@ -1,6 +1,6 @@
 {
   "name": "rate-repository-app",
-  "version": "0.10.18",
+  "version": "0.10.19",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -19,6 +19,7 @@
     "apollo-boost": "^0.4.9",
     "dotenv": "^16.3.1",
     "expo": "^48.0.20",
+    "expo-linking": "~4.0.1",
     "expo-status-bar": "~1.4.0",
     "formik": "^2.4.2",
     "graphql": "^15.8.0",
@@ -58,5 +59,4 @@
       "<rootDir>/setupTests.js"
     ]
   }
-
 }
