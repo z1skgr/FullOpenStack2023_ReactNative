@@ -23,8 +23,8 @@ const RepositoryListContainer = ({ repositories }) => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Link to={`/repository/${item.id}`} component={Pressable}>
-                    <RepositoryItem item={item} />
-                </Link>
+          <RepositoryItem item={item} />
+        </Link>
       )}
     />
   );

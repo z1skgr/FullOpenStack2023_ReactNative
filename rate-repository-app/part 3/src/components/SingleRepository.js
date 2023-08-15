@@ -12,7 +12,7 @@ const SingleRepository = () => {
   console.log(repository)
   console.log(id)
   return (
-    <View>
+    <View style={{ backgroundColor: 'white', padding:20 }}>
       {repository  && <RepositoryItem item={repository} link />}
     </View>
   );
