@@ -35,8 +35,6 @@ const styles = StyleSheet.create({
 
 });
 
-
-
 const InfoContainer = ({ item }) => {
   return (
          <View style={styles.flexContainer}>

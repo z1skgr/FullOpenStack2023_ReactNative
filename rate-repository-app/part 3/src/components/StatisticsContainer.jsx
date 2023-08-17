@@ -17,10 +17,6 @@ const styles = StyleSheet.create({
 
 });
 
-
-
-
-
 const StatisticsContainer = ({ stargazersCount, forksCount, reviewCount, ratingAverage }) => {
   return (
     <View style={styles.flexContainer}>

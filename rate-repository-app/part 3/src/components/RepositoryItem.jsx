@@ -12,22 +12,13 @@ import theme from '../theme';
 const styles = StyleSheet.create({
   txtBtn: {
     backgroundColor: '#0366d6',
-    padding: 14,
+    padding: 7,
     color: 'white',
     textAlign: 'center',
     margin: 1,
     borderRadius: 10,
     fontWeight: 'bold',
-  },
-    txtBtn: {
-        backgroundColor: '#0366d6',
-        padding: 14,
-        color: 'white',
-        textAlign: 'center',
-        margin: 1,
-        borderRadius: 10,
-        fontWeight: 'bold',
-      }
+  }
 });
 
 const kFormat = (num) => {
@@ -50,12 +41,13 @@ const RepositoryItem = ({ item, link }) => {
         reviewCount={kFormat(item.reviewCount)}
         ratingAverage={item.ratingAverage}  />
 
-          {link && <TouchableWithoutFeedback testID='gitbutton' onPress={openConnection}>
+        {link && <TouchableWithoutFeedback testID='gitbutton' onPress={openConnection}>
                            <View>
                              <Text style={styles.txtBtn}>Open In github</Text>
                            </View>
                          </TouchableWithoutFeedback>}
     </View>
+
 
   );
 };

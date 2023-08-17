@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
     fontWeight: theme.fontWeights.normal,
-    lineHeight: 23,
+    lineHeight: 22,
     textAlign: 'center',
   },
   colorTextSecondary: {

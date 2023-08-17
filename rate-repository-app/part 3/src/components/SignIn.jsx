@@ -39,8 +39,6 @@ const SignIn = () => {
   const onSubmit = async (values) => {
       const { username, password } = values;
 
-      //console.log(username)
-      //console.log(password)
       try {
         const  data  = await signIn({ username, password });
         navigate("/");

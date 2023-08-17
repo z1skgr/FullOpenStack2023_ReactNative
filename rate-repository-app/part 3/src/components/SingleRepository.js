@@ -3,17 +3,18 @@ import { View } from 'react-native';
 import { useParams } from 'react-router-native';
 
 import useRepository from '../hooks/useRepository';
+import useReviews from '../hooks/useReviews';
 import RepositoryItem from './RepositoryItem';
-
+import SingleRepositoryContainer from './SingleRepositoryContainer';
 const SingleRepository = () => {
   const { id } = useParams();
 
   const { repository } = useRepository(id);
-  console.log(repository)
-  console.log(id)
+  const { reviews } = useReviews(id);
+
   return (
-    <View style={{ backgroundColor: 'white', padding:20 }}>
-      {repository  && <RepositoryItem item={repository} link />}
+    <View>
+     <SingleRepositoryContainer repository={repository} reviews={reviews}/>
     </View>
   );
 };
