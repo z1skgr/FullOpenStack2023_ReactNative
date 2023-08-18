@@ -61,13 +61,18 @@ const AppBarTab = (props) => {
             </Text>
           </Link>
 
-        {user ? (
-          <Link to='/signout' onPress={() => SignOut()}>
-            <Text style={styles.bar_text} >
-             {props.text3}
-            </Text>
-          </Link>) :
-          (<Link to='/signin' >
+        {user &&
+                      <Link to='/add-review'>
+                                  <Text style={styles.bar_text} >
+                                   {props.text4}
+                                  </Text>
+                                  </Link> }
+        {user ? (<Link to='/signout' onPress={() => SignOut()}>
+                            <Text style={styles.bar_text} >
+                             {props.text3}
+                            </Text>
+                          </Link>) :
+          (<Link to='/signin'>
             <Text style={styles.bar_text} >
              {props.text2}
             </Text>
