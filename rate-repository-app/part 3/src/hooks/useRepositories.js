@@ -6,11 +6,12 @@ import Text from "../components/Text";
 import { GET_REPOSITORIES } from "../graphql/queries";
 
 
-const useRepositories = () => {
+const useRepositories = ({ orderBy, orderDirection }) => {
   const [repositories, setRepositories] = useState();
 
   const { data, error, loading } = useQuery(GET_REPOSITORIES, {
       fetchPolicy: "cache-and-network",
+      variables: { orderBy, orderDirection },
       onCompleted: (data) => {
         setRepositories(data.repositories);
       },
@@ -18,6 +19,9 @@ const useRepositories = () => {
 
   return { repositories, loading, error  };
 };
+
+
+
 
 
 

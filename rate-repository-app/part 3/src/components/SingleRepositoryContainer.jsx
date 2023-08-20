@@ -26,7 +26,7 @@ const SingleRepositoryContainer = ({ repository, reviews }) => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => <ReviewItem review={item} />}
       ListHeaderComponent={() => repository ? <RepositoryItem  item={repository} link /> : null}
-      ListHeaderComponentStyle={{marginBottom: 4, paddingBottom: 40}}
+      ListHeaderComponentStyle={{marginBottom: 4, paddingBottom: 25}}
     />
   );
 };

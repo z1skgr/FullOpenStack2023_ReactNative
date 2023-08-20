@@ -57,9 +57,7 @@ const CreateReview = () => {
 
 
   };
-    if (payload.data) {
-      navigate.push(payload.data.createReview.repositoryId);
-    }
+
 
   return <CreateReviewContainer onSubmit={onSubmit} />;
 };

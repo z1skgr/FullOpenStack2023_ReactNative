@@ -3,6 +3,7 @@ import { View, StyleSheet, Image } from 'react-native';
 import RepositoryItem  from './RepositoryItem';
 import { FlatList, Pressable } from 'react-native';
 import { Link } from 'react-router-native';
+import SortPicker from './SortPicker';
 
 const styles = StyleSheet.create({
   separator: {
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
 });
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryListContainer = ({ repositories }) => {
+const RepositoryListContainer = ({ repositories, sortType, setSortType }) => {
   const repositoryNodes = repositories
     ? repositories.edges.map((edge) => edge.node)
     : [];
@@ -26,6 +27,7 @@ const RepositoryListContainer = ({ repositories }) => {
           <RepositoryItem item={item} />
         </Link>
       )}
+      ListHeaderComponent={() => <SortPicker sortType={sortType} setSortType={setSortType} />}
     />
   );
 };

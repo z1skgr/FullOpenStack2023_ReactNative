@@ -1,6 +1,6 @@
 {
   "name": "rate-repository-app",
-  "version": "0.10.22",
+  "version": "0.10.23",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -16,6 +16,7 @@
     "@expo/metro-config": "^0.7.1",
     "@expo/webpack-config": "^18.0.1",
     "@react-native-async-storage/async-storage": "1.17.11",
+    "@react-native-picker/picker": "2.4.8",
     "apollo-boost": "^0.4.9",
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",

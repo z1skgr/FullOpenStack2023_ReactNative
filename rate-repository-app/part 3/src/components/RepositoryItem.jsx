@@ -12,13 +12,25 @@ import theme from '../theme';
 const styles = StyleSheet.create({
   txtBtn: {
     backgroundColor: '#0366d6',
-    padding: 7,
+    padding: 15,
+
     color: 'white',
     textAlign: 'center',
     margin: 1,
     borderRadius: 10,
     fontWeight: 'bold',
-  }
+
+
+  },
+    flexContainer: {
+        display: 'flex',
+        padding:15,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+      },
 });
 
 const kFormat = (num) => {
@@ -32,21 +44,25 @@ const RepositoryItem = ({ item, link }) => {
     const openConnection = () => {
     Linking.openURL(item.url);
   };
+
   return (
+
     <View>
       <InfoContainer item={item} />
       <StatisticsContainer
         stargazersCount={kFormat(item.stargazersCount)}
         forksCount={kFormat(item.forksCount)}
         reviewCount={kFormat(item.reviewCount)}
-        ratingAverage={item.ratingAverage}  />
+        ratingAverage={item.ratingAverage}/>
+      {link && <TouchableWithoutFeedback  testID='gitbutton' onPress={openConnection}>
+                                     <View style={styles.flexContainer}>
+                                       <Text style={styles.txtBtn}>Open In github</Text>
+                                     </View>
+                                   </TouchableWithoutFeedback>}
 
-        {link && <TouchableWithoutFeedback testID='gitbutton' onPress={openConnection}>
-                           <View>
-                             <Text style={styles.txtBtn}>Open In github</Text>
-                           </View>
-                         </TouchableWithoutFeedback>}
+
     </View>
+
 
 
   );
