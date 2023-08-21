@@ -1,6 +1,6 @@
 {
   "name": "rate-repository-app",
-  "version": "0.10.23",
+  "version": "0.10.24",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -33,6 +33,7 @@
     "react-native-web": "~0.18.7",
     "react-query": "^3.39.3",
     "react-router-native": "^6.14.2",
+    "use-debounce": "^9.0.4",
     "use-history": "^1.4.1",
     "yup": "^1.2.0"
   },

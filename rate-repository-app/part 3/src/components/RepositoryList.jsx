@@ -7,33 +7,37 @@ import useRepositories from '../hooks/useRepositories';
 
 import RepositoryListContainer from "./RepositoryListContainer";
 
-const getRepositoryOptions = (sortType) => {
+const getRepositoryOptions = (sortType, searchKeyword) => {
   switch (sortType) {
     case 'most-recent':
       return {
         orderBy: 'CREATED_AT',
         orderDirection: 'DESC',
+        searchKeyword
       };
     case 'highest-rated':
       return {
         orderBy: 'RATING_AVERAGE',
         orderDirection: 'DESC',
+        searchKeyword
       };
     case 'lowest-rated':
       return {
         orderBy: 'RATING_AVERAGE',
         orderDirection: 'ASC',
+        searchKeyword
       };
     default:
-      return {};
+      return {searchKeyword};
   }
 };
 
 const RepositoryList = () => {
   const [sortType, setSortType] = useState('most-recent');
-  const options = getRepositoryOptions(sortType);
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const options = getRepositoryOptions(sortType, searchKeyword);
   const { repositories } = useRepositories(options);
-  return <RepositoryListContainer repositories={repositories} sortType={sortType} setSortType={setSortType} />;
+  return <RepositoryListContainer repositories={repositories} sortType={sortType} setSortType={setSortType} searchKeyword={searchKeyword} setSearchKeyword={setSearchKeyword} />;
 };
 
 
