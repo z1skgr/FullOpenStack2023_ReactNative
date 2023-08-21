@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     },
     bar: {
       backgroundColor: 'white',
+      marginTop:10,
+      borderRadius:5
     }
 });
 
