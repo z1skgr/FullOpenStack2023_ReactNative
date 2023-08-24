@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import RepositoryItem  from './RepositoryItem';
 import { FlatList, Pressable } from 'react-native';
 import { Link } from 'react-router-native';

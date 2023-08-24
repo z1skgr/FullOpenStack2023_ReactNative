@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 
 import ReviewItem from './ReviewItem';

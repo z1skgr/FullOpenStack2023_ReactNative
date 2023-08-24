@@ -1,7 +1,5 @@
-import { View, Text, StyleSheet, Pressable, Alert } from 'react-native';
-import Constants from 'expo-constants';
+import { View, Text, StyleSheet } from 'react-native';
 
-import SignIn from './SignIn'
 import { Link } from 'react-router-native';
 
 import { useQuery } from "@apollo/client";

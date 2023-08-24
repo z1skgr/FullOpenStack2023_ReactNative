@@ -6,7 +6,6 @@ import * as yup from 'yup';
 import useSignIn from "../hooks/useSignIn";
 
 import { useNavigate } from "react-router-native";
-import { useApolloClient } from "@apollo/client";
 
 const validationSchema = yup.object().shape({
   username: yup.string()

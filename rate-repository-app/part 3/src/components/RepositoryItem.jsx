@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Text from './Text';
 
 import StatisticsContainer from './StatisticsContainer';
@@ -7,7 +7,7 @@ import InfoContainer from './InfoContainer';
 import * as Linking from 'expo-linking';
 
 import { TouchableWithoutFeedback } from 'react-native';
-import theme from '../theme';
+
 
 const styles = StyleSheet.create({
   txtBtn: {

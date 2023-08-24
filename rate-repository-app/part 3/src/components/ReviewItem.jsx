@@ -2,9 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import theme from '../theme';
 
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
-import { addYears, formatWithOptions } from 'date-fns/fp'
-import { eo } from 'date-fns/locale'
+import { format } from 'date-fns'
 
 const styles = StyleSheet.create({
   reviewContainer: {

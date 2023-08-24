@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 
 import theme from '../theme';
-import Text from './Text';
 import AppBar from './AppBar'
 
 import { Route, Routes, Navigate } from 'react-router-native';
