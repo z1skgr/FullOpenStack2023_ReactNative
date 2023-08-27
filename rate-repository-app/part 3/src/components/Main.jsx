@@ -12,6 +12,8 @@ import SingleRepository from './SingleRepository'
 import CreateReview from './CreateReview'
 import SignUp from './SignUp'
 
+import MyReviews from './MyReviews'
+
 const styles = StyleSheet.create({
   container: {
     marginTop: Constants.statusBarHeight,
@@ -33,6 +35,7 @@ const Main = () => {
         <Route path="/repository/:id" element={<SingleRepository />} />
         <Route path="/add-review" element={<CreateReview />} exact />
         <Route path="/signup" element={<SignUp />} exact />
+        <Route path="/my-reviews" element={<MyReviews/>} exact />
     </Routes>
     </View>
 

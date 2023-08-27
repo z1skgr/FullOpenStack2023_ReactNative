@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 
 });
 
-const parseDate = (dateString) => {
+export const parseDate = (dateString) => {
   const dateObject = new Date(dateString);
   const formattedDate = format(dateObject, 'MMMM dd, yyyy');
   return formattedDate

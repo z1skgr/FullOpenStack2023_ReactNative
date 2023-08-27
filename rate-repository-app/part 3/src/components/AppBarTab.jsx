@@ -7,6 +7,7 @@ import { GET_USER } from "../graphql/queries";
 import { useApolloClient } from "@apollo/client";
 import { useAuthStorage } from "../hooks/useAuthStorage";
 
+
 import {
   ScrollView
 } from 'react-native';
@@ -39,10 +40,13 @@ const styles = StyleSheet.create({
 
 const AppBarTab = (props) => {
   const { data } = useQuery(GET_USER);
+  console.log(data)
+
   const authStorage = useAuthStorage();
   const apolloClient = useApolloClient();
 
-  const user = data ? data.me : null;
+  const user = data ? data.me : undefined;
+
   console.log(user)
 
   const SignOut = async () => {
@@ -65,11 +69,17 @@ const AppBarTab = (props) => {
                                    {props.text4}
                                   </Text>
                                   </Link> }
+                                  {user &&    (<Link to='/my-reviews' >
+                                    <Text style={styles.bar_text} >
+                                     {props.text6}
+                                    </Text>
+                                  </Link>)}
         {user &&    (<Link to='/signout' onPress={() => SignOut()}>
                             <Text style={styles.bar_text} >
                              {props.text3}
                             </Text>
                           </Link>)}
+
        {!user &&   (<Link to='/signin'>
             <Text style={styles.bar_text} >
              {props.text2}
