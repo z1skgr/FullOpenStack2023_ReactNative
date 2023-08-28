@@ -114,10 +114,10 @@ const MyReviewItem = ({ review, refetch }) => {
       </View>
 <View style={{flexDirection: 'row'}}>
     <View style={styles.viewButton}>
-    <Button  title="View repository" onPress={viewPress} />
+    <Button color="#841584" title="View repository" onPress={viewPress} />
     </View>
         <View style={styles.deleteButton}>
-        <Button  title="Delete review" onPress={onPress} />
+        <Button color="#d73a4a" title="Delete review" onPress={onPress} />
         </View>
 
       </View>
