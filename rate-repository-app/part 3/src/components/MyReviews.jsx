@@ -6,7 +6,7 @@ import MyReviewItem from "./MyReviewItem";
 
 
 const MyReviews = () => {
-  const { data } = useQuery(GET_CURRENT_USER, {
+  const { data, refetch  } = useQuery(GET_CURRENT_USER, {
     variables: {
       includeReviews: true,
     },
@@ -18,7 +18,7 @@ const MyReviews = () => {
   return (
     <FlatList
       data={myReviewsData}
-      renderItem={({ item }) => <MyReviewItem review={item} />}
+      renderItem={({ item }) => <MyReviewItem review={item} refetch={refetch} />}
       keyExtractor={(item) => item.node.id}
     />
   );

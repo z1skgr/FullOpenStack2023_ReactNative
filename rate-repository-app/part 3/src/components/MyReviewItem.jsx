@@ -1,8 +1,14 @@
 import React from "react";
 import { format } from "date-fns";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet  } from "react-native";
 import Text from "./Text";
 import theme from '../theme';
+
+
+import useDeleteReview from "../hooks/useDeleteReview";
+import { useNavigate } from "react-router-native";
+import { Button } from 'react-native';
+import { Alert } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +34,26 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     alignItems: 'flex-start',
+
   },
+    deleteButton: {
+
+      paddingHorizontal: 15,
+      color: 'white',
+      textAlign: 'center',
+      borderRadius: 10,
+      fontWeight: 'bold',
+    },
+    viewButton: {
+
+      paddingHorizontal: 15,
+      marginRight: 15,
+      color: 'white',
+      textAlign: 'center',
+      borderRadius: 10,
+      fontWeight: 'bold',
+
+    },
 });
 
  const parseDate = (dateString) => {
@@ -37,7 +62,38 @@ const styles = StyleSheet.create({
   return formattedDate
 };
 
-const MyReviewItem = ({ review }) => {
+const MyReviewItem = ({ review, refetch }) => {
+
+    const navigate = useNavigate();
+    const [deleteReview] = useDeleteReview();
+
+    const viewPress = () => {
+        navigate(`/repository/${review.node.repository.id}`);
+      };
+
+      const deleteAction = () => {
+        console.log(review.node.id)
+        deleteReview(review.node.id);
+        refetch();
+      };
+
+      const onPress = () => {
+        Alert.alert(
+              "Delete review",
+              "Are you sure you want to delete this review?",
+              [
+                {
+                  text: "CANCEL",
+                  onPress: () => console.log("Cancel Pressed"),
+                  style: "cancel",
+                },
+                { text: "DELETE", onPress: () => deleteAction() },
+              ],
+              { cancelable: false }
+            );
+      }
+
+
   return (
     <View key={review.node.id} style={styles.container}>
       <View style={styles.topContainer}>
@@ -56,7 +112,15 @@ const MyReviewItem = ({ review }) => {
           <Text style={{paddingTop:5}}>{review.node.text}</Text>
         </View>
       </View>
+<View style={{flexDirection: 'row'}}>
+    <View style={styles.viewButton}>
+    <Button  title="View repository" onPress={viewPress} />
+    </View>
+        <View style={styles.deleteButton}>
+        <Button  title="Delete review" onPress={onPress} />
+        </View>
 
+      </View>
     </View>
   );
 };

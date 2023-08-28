@@ -48,6 +48,7 @@ export const GET_CURRENT_USER = gql`
                   repository {
                     name
                     ownerName
+                    id
                   }
                   createdAt
                   user {
@@ -112,5 +113,7 @@ export const GET_REVIEWS = gql`
     }
   }
 `;
+
+
 
 
