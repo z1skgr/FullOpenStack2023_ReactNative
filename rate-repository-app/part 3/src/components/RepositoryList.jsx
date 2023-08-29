@@ -33,7 +33,7 @@ const getRepositoryOptions = (sortType, searchKeyword) => {
 const RepositoryList = () => {
   const [sortType, setSortType] = useState('most-recent');
   const [searchKeyword, setSearchKeyword] = useState('');
-  const options = {first:3, ...getRepositoryOptions(sortType, searchKeyword)};
+  const options = {first:5, ...getRepositoryOptions(sortType, searchKeyword)};
   const { repositories, fetchMore  } = useRepositories(options);
   const onEndReached = () => {
       fetchMore();

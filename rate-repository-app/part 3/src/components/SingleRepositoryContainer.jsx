@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 });
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const SingleRepositoryContainer = ({ repository, reviews }) => {
+const SingleRepositoryContainer = ({ repository, reviews, onEndReached }) => {
 
   const reviewNodes = reviews
     ? reviews.edges.map((edge) => edge.node)
@@ -23,6 +23,8 @@ const SingleRepositoryContainer = ({ repository, reviews }) => {
     <FlatList
       data={reviewNodes}
       ItemSeparatorComponent={ItemSeparator}
+      onEndReached={onEndReached}
+      onEndReachedThreshold={0.5}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => <ReviewItem review={item} />}
       ListHeaderComponent={() => repository ? <RepositoryItem  item={repository} link /> : null}

@@ -12,9 +12,6 @@ const useRepositories = (variables) => {
   const { data, error, loading, refetch, fetchMore, ...result } = useQuery(GET_REPOSITORIES, {
       fetchPolicy: "cache-and-network",
       variables,
-      onCompleted: (data) => {
-        setRepositories(data.repositories);
-      },
   });
     const handleFetchMore = () => {
     const canFetchMore = !loading && data?.repositories.pageInfo.hasNextPage;
