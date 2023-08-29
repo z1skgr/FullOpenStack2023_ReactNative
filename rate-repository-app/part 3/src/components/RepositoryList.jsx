@@ -33,9 +33,12 @@ const getRepositoryOptions = (sortType, searchKeyword) => {
 const RepositoryList = () => {
   const [sortType, setSortType] = useState('most-recent');
   const [searchKeyword, setSearchKeyword] = useState('');
-  const options = getRepositoryOptions(sortType, searchKeyword);
-  const { repositories } = useRepositories(options);
-  return <RepositoryListContainer repositories={repositories} sortType={sortType} setSortType={setSortType} searchKeyword={searchKeyword} setSearchKeyword={setSearchKeyword} />;
+  const options = {first:3, ...getRepositoryOptions(sortType, searchKeyword)};
+  const { repositories, fetchMore  } = useRepositories(options);
+  const onEndReached = () => {
+      fetchMore();
+    };
+  return <RepositoryListContainer repositories={repositories} sortType={sortType} setSortType={setSortType} searchKeyword={searchKeyword} setSearchKeyword={setSearchKeyword} onEndReached={onEndReached}/>;
 };
 
 

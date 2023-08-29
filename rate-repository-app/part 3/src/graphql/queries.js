@@ -1,8 +1,8 @@
 import { gql } from "apollo-boost";
 
 export const GET_REPOSITORIES = gql`
-  query repositories($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
-    repositories(orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
+  query repositories($first: Int, $after: String, $orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
+    repositories(first: $first, after: $after, orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
       edges {
         node {
           createdAt
@@ -18,7 +18,14 @@ export const GET_REPOSITORIES = gql`
           reviewCount
           stargazersCount
         }
+        cursor
       }
+       pageInfo {
+            endCursor
+            startCursor
+            hasNextPage
+            hasPreviousPage
+          }
     }
   }
 `;
