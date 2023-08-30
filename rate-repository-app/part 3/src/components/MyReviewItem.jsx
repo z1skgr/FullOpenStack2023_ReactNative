@@ -1,5 +1,4 @@
 import React from "react";
-import { format } from "date-fns";
 import { View, StyleSheet  } from "react-native";
 import Text from "./Text";
 import theme from '../theme';
@@ -9,6 +8,7 @@ import useDeleteReview from "../hooks/useDeleteReview";
 import { useNavigate } from "react-router-native";
 import { Button } from 'react-native';
 import { Alert } from 'react-native';
+import { parseDate } from '../utils/helpers'
 
 const styles = StyleSheet.create({
   container: {
@@ -56,11 +56,7 @@ const styles = StyleSheet.create({
     },
 });
 
- const parseDate = (dateString) => {
-  const dateObject = new Date(dateString);
-  const formattedDate = format(dateObject, 'MMMM dd, yyyy');
-  return formattedDate
-};
+
 
 const MyReviewItem = ({ review, refetch }) => {
 

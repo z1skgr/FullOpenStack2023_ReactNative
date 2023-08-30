@@ -7,7 +7,7 @@ import InfoContainer from './InfoContainer';
 import * as Linking from 'expo-linking';
 
 import { TouchableWithoutFeedback } from 'react-native';
-
+import { kFormat } from '../utils/helpers'
 
 const styles = StyleSheet.create({
   txtBtn: {
@@ -33,11 +33,7 @@ const styles = StyleSheet.create({
       },
 });
 
-const kFormat = (num) => {
-  return Math.abs(num) > 999
-    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'k'
-    : Math.sign(num) * Math.abs(num);
-};
+
 
 
 const RepositoryItem = ({ item, link }) => {

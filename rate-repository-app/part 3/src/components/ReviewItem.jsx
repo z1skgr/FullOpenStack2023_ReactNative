@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import theme from '../theme';
 
-import { format } from 'date-fns'
+
+import { parseDate } from '../utils/helpers'
 
 const styles = StyleSheet.create({
   reviewContainer: {
@@ -28,12 +29,6 @@ const styles = StyleSheet.create({
    },
 
 });
-
-export const parseDate = (dateString) => {
-  const dateObject = new Date(dateString);
-  const formattedDate = format(dateObject, 'MMMM dd, yyyy');
-  return formattedDate
-};
 
 const ReviewItem = ({ review }) => {
   console.log(review)
