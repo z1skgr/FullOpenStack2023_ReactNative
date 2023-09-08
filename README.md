@@ -35,6 +35,9 @@ React Native, development for mobile applications
 
 [Solutions](https://github.com/z1skgr/FullOpenStack2023_ReactNative/tree/main)
 
+Data retrieval with Apoollo Client from [Rate Repository API](https://github.com/fullstack-hy2020/rate-repository-api#-authentication)
+Follow `README`steps for installation.
+
 
 
 ## Exercises per part
